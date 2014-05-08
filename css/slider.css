@@ -1,0 +1,40 @@
+﻿div#opener {
+	z-index: 100;
+	position: fixed;
+	top: 250px;
+	left: 0px;
+	background: rgba(50,50,50, 0.8);
+	border-radius: 0 5px 5px 0;
+	cursor: pointer;
+}
+
+div#content {
+	z-index: 100;
+	position: fixed;
+	left: -130px;
+	top: 50px;
+	width: 90px;
+	height: 540px;
+	background: rgba(50,50,50,0.8);
+	border-radius: 0 15px 15px 0;
+	font-size: 12px;
+	text-align: center;
+	line-height: 12px;
+	padding: 0 20px 0 20px;
+}
+
+div#content a img {
+	margin: 50px 0 0 0 ;
+	height: 35px;
+}
+
+div#content a {
+	font: 700 13px/14px "Arial", sans serif;
+	text-decoration: none;
+	color: white;
+}
+
+    display: inline-block;
+	height: 8px;
+	background: red;
+}
