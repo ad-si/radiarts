@@ -1,17 +1,11 @@
 ﻿<?php
-/*
-$mysqlHost = "217.11.53.158";
-$mysqlUser = "radiarts";
-$mysqlPassword = "gonuga28";
-$mysqlName = "radiarts";
-*/
 
-$mysqlHost = "localhost";
+$mysqlHost = "127.0.0.1";
 $mysqlUser = "root";
-$mysqlPassword = "admin";
+$mysqlPassword = "gorula34";
 $mysqlName = "radiarts";
 
-$connect = @mysql_connect($mysqlHost, $mysqlUser, $mysqlPassword) or die("Can not connect to the database!");
-$selectDB = @mysql_select_db($mysqlName, $connect) or die("The databse <b>$mysqlName</b> can not be selected!");
-
-?>
+$connect = @mysql_connect($mysqlHost, $mysqlUser, $mysqlPassword)
+    or die("Can not connect to the database!");
+$selectDB = @mysql_select_db($mysqlName, $connect)
+    or die("The databse <b>$mysqlName</b> can not be selected!");

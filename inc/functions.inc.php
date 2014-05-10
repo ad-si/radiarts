@@ -5,7 +5,7 @@ function escape($text) {
 }
 
 function browserhack($browser, $printthis) {
-	
+
 	//Detect Browser (order is important!)
 	$a = (isset( $_SERVER['HTTP_USER_AGENT'] ) ) ? strtolower( $_SERVER['HTTP_USER_AGENT'] ) : '';
 
@@ -23,15 +23,13 @@ function browserhack($browser, $printthis) {
 	}
 	elseif (stristr($a, "firefox")) {
 		$b = 'firefox';
-	}	
+	}
 	else {
 		$b = '';
-	}		
-	
+	}
+
 	//Print specific text
 	if ($b == $browser) {
 		return $printthis;
 	}
 }
-
-?>
