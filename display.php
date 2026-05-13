@@ -7,14 +7,14 @@ echo '<div id="display">';
 if (isset($_GET["id_img"])) {
 
     //radiartwork mit entsprechender id auswählen
-    $sql_display = "SELECT * FROM radiartworks WHERE id = " . $_GET["id_img"] . ";";
+    $sql_display = "SELECT * FROM radiartworks WHERE id = " . intval($_GET["id_img"]) . ";";
 }
 
 //Datenbankabfrage
-$res = mysql_query($sql_display);
+$res = db_query($sql_display);
 
 //Daten Ausgeben
-while ($data = mysql_fetch_assoc($res)) {
+while ($data = db_fetch_assoc($res)) {
 
     //Array unserialisieren
     $erg = unserialize($data["array"]);

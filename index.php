@@ -5,10 +5,10 @@ include('inc/common.inc.php');
 $sql_home_logo = "select * from radiartworks where id = 1";
 
 //Datenbankabfrage
-$res = mysql_query($sql_home_logo);
+$res = db_query($sql_home_logo);
 
 //Daten Ausgeben
-while ($data = mysql_fetch_assoc($res)) {
+while ($data = db_fetch_assoc($res)) {
 
     //Array unserialisieren
     $erg = unserialize($data["array"]);
@@ -36,13 +36,13 @@ while ($data = mysql_fetch_assoc($res)) {
 }
 
 //radiartwork mit entsprechender id auswählen
-$sql_home_content = "SELECT * FROM radiartworks where x = 90 and id != 1 ORDER BY RAND() LIMIT 1";
+$sql_home_content = "SELECT * FROM radiartworks where x = 90 and id != 1 ORDER BY RANDOM() LIMIT 1";
 
 //Datenbankabfrage
-$res = mysql_query($sql_home_content);
+$res = db_query($sql_home_content);
 
 //Daten Ausgeben
-while ($data = mysql_fetch_assoc($res)) {
+while ($data = db_fetch_assoc($res)) {
 
     //Array unserialisieren
     $erg = unserialize($data["array"]);

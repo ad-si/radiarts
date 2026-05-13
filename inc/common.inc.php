@@ -15,28 +15,28 @@ function error_handler($errno, $errstr, $errfile, $errline) {
 
 //set_error_handler('error_handler');
 
-include('mysql.inc.php');
+include('db.inc.php');
 include('functions.inc.php');
 
 //Random table row
-$sq = "SELECT * FROM radiartworks ORDER BY RAND() LIMIT 1;";
-$reso = mysql_query($sq);
-$random = mysql_fetch_assoc($reso);
+$sq = "SELECT * FROM radiartworks ORDER BY RANDOM() LIMIT 1;";
+$reso = db_query($sq);
+$random = db_fetch_assoc($reso);
 
 
 //test if you have already voted for a radiartwork
 if (isset($_GET["id_img"])) {
     if (!isset($_COOKIE[$_GET["id_img"]])) {
         if (isset($_POST["plus"])) {
-            $update = 'UPDATE radiartworks SET up = up+1 WHERE id = ' . $_GET["id_img"] . ';';
-            mysql_query($update);
+            $update = 'UPDATE radiartworks SET up = up+1 WHERE id = ' . intval($_GET["id_img"]) . ';';
+            db_query($update);
             setcookie($_GET["id_img"], "1", time() + 86400);
             $rating = '1';
         }
 
         if (isset($_POST["minus"])) {
-            $update = 'UPDATE radiartworks SET down = down+1 WHERE id = ' . $_GET["id_img"] . ';';
-            mysql_query($update);
+            $update = 'UPDATE radiartworks SET down = down+1 WHERE id = ' . intval($_GET["id_img"]) . ';';
+            db_query($update);
             setcookie($_GET["id_img"], "1", time() + 86400);
             $rating = '1';
         }

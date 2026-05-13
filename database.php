@@ -22,23 +22,33 @@ if (isset($_POST["send"])) {
     //Zum Speichern serialisieren
     $array_save = serialize($img);
 
-    $sql_insert = "insert radiartworks (id, user, title, array, x, y, time, up, down) values " .
-        "(NULL, '" . $_POST["user"] . "', '" . $_POST["title"] . "', '" . $array_save . "', '" . $_POST["xsize"] .
-        "', '" . $_POST["ysize"] . "', NOW(), 0, 0);";
+    global $db;
+    $sql_insert = "INSERT INTO radiartworks (id, user, title, array, x, y, time, up, down) VALUES " .
+        "(NULL, :user, :title, :array, :x, :y, datetime('now'), 0, 0);";
 
     //test if entry already exists
-    $sql = "SELECT * FROM radiartworks WHERE user = '" . $_POST['user'] .
-        "' and title = '" . $_POST['title'] . "' and array = '" . $array_save . "';";
-    $query = mysql_query($sql);
-    $num = mysql_num_rows($query);
+    $check = $db->prepare("SELECT id FROM radiartworks WHERE user = :user AND title = :title AND array = :array;");
+    $check->execute([
+        ':user'  => $_POST['user'],
+        ':title' => $_POST['title'],
+        ':array' => $array_save,
+    ]);
+    $num = count($check->fetchAll(PDO::FETCH_ASSOC));
 
     if ($num > 0)
         echo '<p style="color: red;">Your radiartwork already exists!</p>';
 
     else {
 
-        $sqlo = mysql_query($sql_insert); //Speichern
-        $num = mysql_affected_rows(); //überprüfung ob Speichern erfolgreich war
+        $insert = $db->prepare($sql_insert);
+        $insert->execute([
+            ':user'  => $_POST['user'],
+            ':title' => $_POST['title'],
+            ':array' => $array_save,
+            ':x'     => $_POST['xsize'],
+            ':y'     => $_POST['ysize'],
+        ]);
+        $num = $insert->rowCount(); //überprüfung ob Speichern erfolgreich war
 
         if ($num > 0) {
             echo "<p><font color='#00aa00'>";
@@ -56,7 +66,7 @@ if (isset($_POST["send"])) {
 
 $sql = ("SELECT id FROM radiartworks");
 
-$number = mysql_num_rows(mysql_query($sql));
+$number = db_num_rows(db_query($sql));
 
 $maximum_entrys = 20;
 
@@ -64,7 +74,7 @@ $sites = $number / $maximum_entrys; //Anzahl der Seiten errechnen
 
 if (!isset($_GET['sort'])) {
     $identifier = "rand";
-    $sort = "RAND()";
+    $sort = "RANDOM()";
 } else { //Sortiermöglichkeiten
     if ($_GET['sort'] == "up") {
         $identifier = "up";
@@ -83,14 +93,15 @@ if (!isset($_GET['sort'])) {
 //Normalabfrage, wenn keine Seite gegeben ist.
 if (!isset($_GET['page'])) {
     $sql = "SELECT id, user, title, array, x, y, ".
-        "DATE_FORMAT(time,' %d.%m.%Y at %H.%i h') as time, up, down ".
+        "strftime(' %d.%m.%Y at %H.%M h', time) as time, up, down ".
         "FROM radiartworks ORDER BY " . $sort .
         " LIMIT 0," . $maximum_entrys . ";";
 } else {
     //Abfrage, wenn eine Seitenzahl gegeben ist.
-    $datas = ($_GET['page'] * $maximum_entrys) - $maximum_entrys;
+    $page = intval($_GET['page']);
+    $datas = ($page * $maximum_entrys) - $maximum_entrys;
     $sql = "SELECT * FROM radiartworks ORDER BY " . $sort . " LIMIT " .
-        $datas . "," . $maximum_entrys * $_GET['page'] . ";";
+        $datas . "," . $maximum_entrys * $page . ";";
 }
 
 
@@ -115,9 +126,9 @@ echo "<tr>
 </tr>";
 
 
-$res = mysql_query($sql);
+$res = db_query($sql);
 
-while ($data = mysql_fetch_assoc($res)) {
+while ($data = db_fetch_assoc($res)) {
 
     $width_up = 0.3 * $data["up"];
     $width_down = 0.3 * $data["down"];
