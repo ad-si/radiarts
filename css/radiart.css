@@ -206,7 +206,11 @@ div#database a.num {
 /*-------------------------------------------------Display--------------------*/
 
 div#display {
-  text-align: center; 
+  text-align: center;
+}
+
+div#display div.size {
+  margin: 20px auto;
 }
 
 div#display div.rate {
