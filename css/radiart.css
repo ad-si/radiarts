@@ -11,12 +11,15 @@ body {
 }
 
 div.size {
-  margin: 0 auto 0 auto;
+  width: max-content;
+  margin: 0 auto;
+  line-height: 0;
 }
 
 div.size input[type="radio"] {
   background: rgb(255,255,255);
   border: hidden;
+  vertical-align: top;
 }
 
 div.size input[type="radio"]:checked {

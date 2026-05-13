@@ -5,7 +5,6 @@ include('inc/common.inc.php');
 echo '<div id="paint">';
 
 echo '<form action="database.php" method="post">';
-echo '<div class="size" ';
 
 if (!isset($_POST["send"])) {
     $valuex = 100; //default-size
@@ -15,8 +14,7 @@ if (!isset($_POST["send"])) {
     $valuey = $_POST["ysize"];
 }
 
-
-echo 'style="width: ' . ($valuex * 12) . 'px;">';
+echo '<div class="size">';
 
 for ($i = 0; $i <= ($valuey - 1); $i++) {
     for ($j = 1; $j <= $valuex; $j++) {
@@ -25,6 +23,7 @@ for ($i = 0; $i <= ($valuey - 1); $i++) {
         echo '<input type="radio" name="' . $value .
             '" onfocus="a=this.checked" onclick="this.checked=!a;this.blur()" />';
     }
+    echo '<br />';
 }
 
 

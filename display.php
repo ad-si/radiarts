@@ -19,10 +19,7 @@ while ($data = db_fetch_assoc($res)) {
     //Array unserialisieren
     $erg = unserialize($data["array"]);
 
-    echo '<div class="size" ';
-
-    //Breite des umfassenden divs
-    echo 'style="width: ' . ($data["x"] * 12) . 'px;">';
+    echo '<div class="size">';
 
     //Mit Schleife Array ausgeben
     for ($i = 0; $i <= ($data["y"] - 1); $i++) {
@@ -40,6 +37,7 @@ while ($data = db_fetch_assoc($res)) {
                     onclick="this.checked=!a;this.blur()" />';
             }
         }
+        echo '<br />';
     }
 
 
