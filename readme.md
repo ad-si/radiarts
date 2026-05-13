@@ -4,6 +4,8 @@ A web app that turns HTML radio buttons into a pixel-art medium.
 Visitors paint by toggling a grid of radio buttons, save the result,
 browse a gallery of other people's pieces, and vote them up or down.
 
+![Radiarts screenshot](./img/screenshot.png)
+
 
 ## Pages
 
