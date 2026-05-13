@@ -1,21 +1,21 @@
 ﻿<?php
 include('inc/common.inc.php');
 
-//radiartwork mit entsprechender id auswählen
+// select radiartwork with corresponding id
 $sql_home_logo = "select * from radiartworks where id = 1";
 
-//Datenbankabfrage
+// database query
 $res = db_query($sql_home_logo);
 
-//Daten Ausgeben
+// output data
 while ($data = db_fetch_assoc($res)) {
 
-    //Array unserialisieren
+    // unserialize array
     $erg = unserialize($data["array"]);
 
     echo '<div class="size">';
 
-    //Mit Schleife multidimensionales Array ausgeben
+    // output multidimensional array with loop
     for ($i = 0; $i <= ($data["y"] - 1); $i++) {
         for ($j = 1; $j <= $data["x"]; $j++) {
 
@@ -34,21 +34,21 @@ while ($data = db_fetch_assoc($res)) {
     echo '</div> ';
 }
 
-//radiartwork mit entsprechender id auswählen
+// select radiartwork with corresponding id
 $sql_home_content = "SELECT * FROM radiartworks where x = 90 and id != 1 ORDER BY RANDOM() LIMIT 1";
 
-//Datenbankabfrage
+// database query
 $res = db_query($sql_home_content);
 
-//Daten Ausgeben
+// output data
 while ($data = db_fetch_assoc($res)) {
 
-    //Array unserialisieren
+    // unserialize array
     $erg = unserialize($data["array"]);
 
     echo '<div class="size">';
 
-    //Mit Schleife Array ausgeben
+    // output array with loop
     for ($i = 0; $i <= ($data["y"] - 1); $i++) {
         for ($j = 1; $j <= $data["x"]; $j++) {
 

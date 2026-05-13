@@ -3,25 +3,25 @@ include('inc/common.inc.php');
 
 echo '<div id="display">';
 
-//Wenn ein radiartwork ausgewählt ist
+// if a radiartwork is selected
 if (isset($_GET["id_img"])) {
 
-    //radiartwork mit entsprechender id auswählen
+    // select radiartwork with corresponding id
     $sql_display = "SELECT * FROM radiartworks WHERE id = " . intval($_GET["id_img"]) . ";";
 }
 
-//Datenbankabfrage
+// database query
 $res = db_query($sql_display);
 
-//Daten Ausgeben
+// output data
 while ($data = db_fetch_assoc($res)) {
 
-    //Array unserialisieren
+    // unserialize array
     $erg = unserialize($data["array"]);
 
     echo '<div class="size">';
 
-    //Mit Schleife Array ausgeben
+    // output array with loop
     for ($i = 0; $i <= ($data["y"] - 1); $i++) {
         for ($j = 1; $j <= $data["x"]; $j++) {
 

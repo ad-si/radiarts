@@ -2,13 +2,13 @@
 
 function error_handler($errno, $errstr, $errfile, $errline) {
 
-    // Temporäre Debugging-Ausgabe
+    // temporary debugging output
     echo '<pre>';
     echo new ErrorException($errstr, 0, $errno, $errfile, $errline);
     echo '</pre>';
-    //Produktiv-Funktion
-    mail('adriansieber@web.de', 'Fehler!', new ErrorException($errstr, 0, $errno, $errfile, $errline));
-    // TODO: Zu Fehlerseite weiterleiten
+    // production function
+    mail('adriansieber@web.de', 'Error!', new ErrorException($errstr, 0, $errno, $errfile, $errline));
+    // TODO: redirect to error page
     if ($errno != E_WARNING && $errno != E_NOTICE)
         exit;
 }

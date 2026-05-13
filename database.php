@@ -8,18 +8,18 @@ $img = array();
 
 if (isset($_POST["send"])) {
 
-    //Die Werte des Formulars einem Array zuweisen
+    // assign form values to an array
     for ($i = 0; $i <= ($_POST["ysize"] - 1); $i++) {
         for ($j = 1; $j <= $_POST["xsize"]; $j++) {
 
             $value = ($i * $_POST["xsize"]) + $j;
 
-            //wenn $_POST[$value] existiert ist es angeklickt --> wert = 1
+            // if $_POST[$value] exists it is clicked --> value = 1
             if (isset($_POST[$value])) $img[$value] = 1;
         }
     }
 
-    //Zum Speichern serialisieren
+    // serialize for saving
     $array_save = serialize($img);
 
     global $db;
@@ -48,7 +48,7 @@ if (isset($_POST["send"])) {
             ':x'     => $_POST['xsize'],
             ':y'     => $_POST['ysize'],
         ]);
-        $num = $insert->rowCount(); //überprüfung ob Speichern erfolgreich war
+        $num = $insert->rowCount(); // check if saving was successful
 
         if ($num > 0) {
             echo "<p><font color='#00aa00'>";
@@ -70,12 +70,12 @@ $number = db_num_rows(db_query($sql));
 
 $maximum_entrys = 20;
 
-$sites = $number / $maximum_entrys; //Anzahl der Seiten errechnen
+$sites = $number / $maximum_entrys; // calculate number of pages
 
 if (!isset($_GET['sort'])) {
     $identifier = "rand";
     $sort = "RANDOM()";
-} else { //Sortiermöglichkeiten
+} else { // sorting options
     if ($_GET['sort'] == "up") {
         $identifier = "up";
         $sort = "up DESC, down DESC";
@@ -90,14 +90,14 @@ if (!isset($_GET['sort'])) {
     }
 }
 
-//Normalabfrage, wenn keine Seite gegeben ist.
+// normal query when no page is given.
 if (!isset($_GET['page'])) {
     $sql = "SELECT id, user, title, array, x, y, ".
         "strftime(' %d.%m.%Y at %H.%M h', time) as time, up, down ".
         "FROM radiartworks ORDER BY " . $sort .
         " LIMIT 0," . $maximum_entrys . ";";
 } else {
-    //Abfrage, wenn eine Seitenzahl gegeben ist.
+    // query when a page number is given.
     $page = intval($_GET['page']);
     $datas = ($page * $maximum_entrys) - $maximum_entrys;
     $sql = "SELECT * FROM radiartworks ORDER BY " . $sort . " LIMIT " .
@@ -105,7 +105,7 @@ if (!isset($_GET['page'])) {
 }
 
 
-//Sortierfunktionen
+// sorting functions
 echo '<a class="sort" href="display.php?id_img=' . $random['id'] .
     '">Random radiartwork</a>
   <b> | </b>
@@ -114,7 +114,7 @@ echo '<a class="sort" href="display.php?id_img=' . $random['id'] .
   <a class="sort" href="database.php?sort=up">Sort by Rating</a>';
 
 
-//Tabelle ausgeben
+// output table
 echo "<table>";
 echo "<tr>
   <th>Number</th>
@@ -153,7 +153,7 @@ while ($data = db_fetch_assoc($res)) {
 
 echo '</table>';
 
-//Ausgabe der Linkliste
+// output link list
 for ($i = 2; $i - 1 < $sites; $i++) {
     echo '<a class="num" href="database.php?page=' . $i . '&sort=' .
         $identifier . '">' . $i . '</a>';
