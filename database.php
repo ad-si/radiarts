@@ -108,21 +108,21 @@ if (!isset($_GET['page'])) {
 //Sortierfunktionen
 echo '<a class="sort" href="display.php?id_img=' . $random['id'] .
     '">Random radiartwork</a>
-	<b> | </b>
-	<a class="sort" href="database.php?sort=x">Sort by Size</a>
-	<a class="sort" href="database.php?sort=time">Sort by Date</a>
-	<a class="sort" href="database.php?sort=up">Sort by Rating</a>';
+  <b> | </b>
+  <a class="sort" href="database.php?sort=x">Sort by Size</a>
+  <a class="sort" href="database.php?sort=time">Sort by Date</a>
+  <a class="sort" href="database.php?sort=up">Sort by Rating</a>';
 
 
 //Tabelle ausgeben
 echo "<table>";
 echo "<tr>
-	<th>Number</th>
-	<th>Artist</th>
-	<th>Title</th>
-	<th>Size</th>
-	<th>Date of Publication</th>
-	<th>Rating</th>
+  <th>Number</th>
+  <th>Artist</th>
+  <th>Title</th>
+  <th>Size</th>
+  <th>Date of Publication</th>
+  <th>Rating</th>
 </tr>";
 
 
@@ -135,20 +135,20 @@ while ($data = db_fetch_assoc($res)) {
 
 
     echo '
-	<tr>
-		<td>' . $data["id"] . '</td>
-		<td>' . escape($data["user"]) . '</td>
-		<td><a href="display.php?id_img=' . $data["id"] . '">' .
+  <tr>
+    <td>' . $data["id"] . '</td>
+    <td>' . escape($data["user"]) . '</td>
+    <td><a href="display.php?id_img=' . $data["id"] . '">' .
         escape($data["title"]) . '</a></td>
-		<td>' . $data["x"] . ' x ' . $data["y"] . '</td>
-		<td>' . $data["time"] . '</td>
-		<td>
-			<div class="up" style="width: ' . $width_up . 'px"></div>
-			<span style="color:green">' . $data["up"] . '</span><br />
-			<div class="down" style="width: ' . $width_down . 'px"></div>
-			<span style="color:red">' . $data["down"] . '</span>
-		</td>
-	</tr>';
+    <td>' . $data["x"] . ' x ' . $data["y"] . '</td>
+    <td>' . $data["time"] . '</td>
+    <td>
+      <div class="up" style="width: ' . $width_up . 'px"></div>
+      <span style="color:green">' . $data["up"] . '</span><br />
+      <div class="down" style="width: ' . $width_down . 'px"></div>
+      <span style="color:red">' . $data["down"] . '</span>
+    </td>
+  </tr>';
 }
 
 echo '</table>';

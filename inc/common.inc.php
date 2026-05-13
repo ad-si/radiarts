@@ -46,7 +46,7 @@ if (isset($_GET["id_img"])) {
 }
 
 $footer = '<div id="footer">
-	an <a href="http://www.adriansieber.com/" >Adrian Sieber</a> production
+  an <a href="http://www.adriansieber.com/" >Adrian Sieber</a> production
 </div>
 </div>';
 
@@ -73,14 +73,14 @@ $footer = '<div id="footer">
     <link href="css/slider.css" rel="stylesheet" type="text/css"/>
 
     <!--
-	<style type="text/css">'.
-	browserhack('opera', 'div.size input[type="radio"] {margin: -5px -1px 0px 0px;}').
-	browserhack('msie', 'div.size input[type="radio"] {margin: -5px -1px 0px 0px;}').
-	browserhack('chrome', 'div.size input[type="radio"] {margin: -5px 0px 0px 0px;}').
-	browserhack('safari', 'div.size input[type="radio"] {margin: -5px 0px 0px 0px;}').
-	browserhack('firefox', 'div.size input[type="radio"] {margin: -5px -1px 0px 0px;}').
-	'</style>
-	-->
+  <style type="text/css">'.
+  browserhack('opera', 'div.size input[type="radio"] {margin: -5px -1px 0px 0px;}').
+  browserhack('msie', 'div.size input[type="radio"] {margin: -5px -1px 0px 0px;}').
+  browserhack('chrome', 'div.size input[type="radio"] {margin: -5px 0px 0px 0px;}').
+  browserhack('safari', 'div.size input[type="radio"] {margin: -5px 0px 0px 0px;}').
+  browserhack('firefox', 'div.size input[type="radio"] {margin: -5px -1px 0px 0px;}').
+  '</style>
+  -->
 
 </head>
 <body>

@@ -32,27 +32,27 @@ echo '</div>
 
 <br />
 <br />
-	<div id="form_div">
-		<span>My name is</span>
-		<input class="info" type="text" name="user" />
-		<span>and my masterpiece is called</span>
-		<input class="info" type="text" name="title" />
-		<input type="hidden" value="' . $valuex . '" name="xsize" />
-		<input type="hidden" value="' . $valuey . '" name="ysize" />
-		<input type="submit" value="Save" name="send" />
-	</div>
+  <div id="form_div">
+    <span>My name is</span>
+    <input class="info" type="text" name="user" />
+    <span>and my masterpiece is called</span>
+    <input class="info" type="text" name="title" />
+    <input type="hidden" value="' . $valuex . '" name="xsize" />
+    <input type="hidden" value="' . $valuey . '" name="ysize" />
+    <input type="submit" value="Save" name="send" />
+  </div>
 </form>
 
 <br />
 
 <form id="form_size" action="paint.php" method="post">
-	Change the resolution of my radiartwork:
-	<input class="size" type="number" min="1" max="100" value="' .
+  Change the resolution of my radiartwork:
+  <input class="size" type="number" min="1" max="100" value="' .
     $valuex . '" name="xsize" />
-	x
-	<input class="size" type="number" min="1" max="100" value="' .
+  x
+  <input class="size" type="number" min="1" max="100" value="' .
     $valuey . '" name="ysize" />
-	<input id="submit_size" type="submit" value="Change" name="send" />
+  <input id="submit_size" type="submit" value="Change" name="send" />
 </form> ';
 
 echo '</div>';

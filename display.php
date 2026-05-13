@@ -53,20 +53,20 @@ while ($data = db_fetch_assoc($res)) {
 
     echo '</div>
         <div class="rate">
-		<form action="display.php?id_img=' . $data["id"] . '" method="post">
-			<input type="submit" class="up_button" name="plus" value="" />
-			<input type="submit" class="down_button" name="minus" value="" />
-		</form>';
+    <form action="display.php?id_img=' . $data["id"] . '" method="post">
+      <input type="submit" class="up_button" name="plus" value="" />
+      <input type="submit" class="down_button" name="minus" value="" />
+    </form>';
 
 
     echo '<div class="wrap_bar">
-		    <div class="up" style="width: ' . $width_up . 'px"></div> ' .
+        <div class="up" style="width: ' . $width_up . 'px"></div> ' .
         $data["up"] .
         ' <br />
-			<div class="down" style="width: ' . $width_down . 'px"></div> ' .
+      <div class="down" style="width: ' . $width_down . 'px"></div> ' .
         $data["down"] .
         ' </div>
-		</div>';
+    </div>';
 
     if (isset($rating)) {
         if ($rating == 1) {

@@ -11,22 +11,22 @@ body {
 }
 
 div.size {
-	margin: 0 auto 0 auto;
+  margin: 0 auto 0 auto;
 }
 
 div.size input[type="radio"] {
-	background: rgb(255,255,255);
-	border: hidden;
+  background: rgb(255,255,255);
+  border: hidden;
 }
 
 div.size input[type="radio"]:checked {
-	color: black;
+  color: black;
 }
 
 /*-------------------------------------------------PAINT--------------------*/
 
 div#paint {
-	text-align: center;
+  text-align: center;
 }
 
 form span {
@@ -99,157 +99,157 @@ input[type="submit"]#submit_size {
 /*-------------------------------------------------DATABASE--------------------*/
 
 div#database  {
-	text-align: center;
+  text-align: center;
 }
 
 div#database form {
-	display: inline-block;
+  display: inline-block;
 }
 
 .sort {
-	display: inline-block;
-	font: 800 16px/16px "Trebuchet MS", sans-serif;
-	text-decoration: none;
-	color: white;
-	background: rgb(50,50,50);
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	margin: 15px 5px 10px 5px;
-	padding: 6px;
+  display: inline-block;
+  font: 800 16px/16px "Trebuchet MS", sans-serif;
+  text-decoration: none;
+  color: white;
+  background: rgb(50,50,50);
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  margin: 15px 5px 10px 5px;
+  padding: 6px;
 }
 
 .sort:hover {
-	background: rgb(100,100,100);
+  background: rgb(100,100,100);
 }
 
 .sort:active {
-	background: rgb(150,150,150);
-	box-shadow: inset 0 0 5px black;
-	-moz-box-shadow: inset 0 0 5px black;
-	-webkit-box-shadow: inset 0 0 5px black;
+  background: rgb(150,150,150);
+  box-shadow: inset 0 0 5px black;
+  -moz-box-shadow: inset 0 0 5px black;
+  -webkit-box-shadow: inset 0 0 5px black;
 }
 
 div#database b {
-	font: 900 20px/20px "Trebuchet MS", sans-serif;
+  font: 900 20px/20px "Trebuchet MS", sans-serif;
 }
 
 
 div#database table {
-	text-align: left;
-	font: 500 14px/14px "Trebuchet MS", sans-serif;
-	margin: 15px auto 0px auto;
-	color: rgb(50,50,50);
-	border: 2px solid rgb(160,160,160);
-	border-radius: 10px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	padding: 20px;
+  text-align: left;
+  font: 500 14px/14px "Trebuchet MS", sans-serif;
+  margin: 15px auto 0px auto;
+  color: rgb(50,50,50);
+  border: 2px solid rgb(160,160,160);
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  padding: 20px;
 }
 
 div#database table th {
-	text-align: center;
+  text-align: center;
     font: 900 16px/16px "Trebuchet MS", sans-serif;
     color: rgb(50,50,50);
-	background:;
-	padding: 10px;
-	text-shadow: 0 1px 0px white;	
+  background:;
+  padding: 10px;
+  text-shadow: 0 1px 0px white; 
 }
 
 div#database tr {
 }
 
 div#database table td{
-	max-width: 200px;
-	background:;
-	border: 1px solid rgb(160,160,160);
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	padding: 4px 6px 4px 6px;
+  max-width: 200px;
+  background:;
+  border: 1px solid rgb(160,160,160);
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  padding: 4px 6px 4px 6px;
 }
 
 div#database table td a{
-	font: 700 14px/14px "Trebuchet MS", sans-serif;
-	color: rgb(50,50,50);
+  font: 700 14px/14px "Trebuchet MS", sans-serif;
+  color: rgb(50,50,50);
 }
 
 
 div.up{
     display: inline-block;
-	height: 8px;
-	background: rgb( 40, 210, 60);
+  height: 8px;
+  background: rgb( 40, 210, 60);
 }
 div.down{
     display: inline-block;
-	height: 8px;
-	background: red;
+  height: 8px;
+  background: red;
 }
 
 
 div#database a.num {
-	display: inline-block;
-	font: 700 16px/16px "Trebuchet MS", sans-serif;
-	color: rgb(50,50,50);
-	margin: 20px 5px 0px 5px;
+  display: inline-block;
+  font: 700 16px/16px "Trebuchet MS", sans-serif;
+  color: rgb(50,50,50);
+  margin: 20px 5px 0px 5px;
 }
 
 /*-------------------------------------------------Display--------------------*/
 
 div#display {
-	text-align: center; 
+  text-align: center; 
 }
 
 div#display div.rate {
-	display: inline-block;
-	text-align: left;
-	background: rgb(230,230,230);
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	padding: 4px;
+  display: inline-block;
+  text-align: left;
+  background: rgb(230,230,230);
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  padding: 4px;
 }
 
 div#display form {
-	display: inline-block;
+  display: inline-block;
 }
  
 div#display .up_button {
     cursor: pointer;
-	height: 18px;
-	width: 16px;
-	margin: 0px 5px 0px 0px ;
-	background: url(../img/thumbs_up.png) no-repeat center;
+  height: 18px;
+  width: 16px;
+  margin: 0px 5px 0px 0px ;
+  background: url(../img/thumbs_up.png) no-repeat center;
 }
 
 div#display .up_button:hover {
-	background: url(../img/thumbs_up_green.png) no-repeat center;
+  background: url(../img/thumbs_up_green.png) no-repeat center;
 }
 
 div#display .down_button {
     cursor: pointer;
-	height: 18px;
-	width: 16px;
-	margin: 0px 10px 0px 0px ;
-	background: url(../img/thumbs_down.png) no-repeat center;
+  height: 18px;
+  width: 16px;
+  margin: 0px 10px 0px 0px ;
+  background: url(../img/thumbs_down.png) no-repeat center;
 }
 
 div#display .down_button:hover {
-	background: url(../img/thumbs_down_red.png) no-repeat center;
+  background: url(../img/thumbs_down_red.png) no-repeat center;
 }
 
 div#display div.wrap_bar {
-	display: inline-block;
+  display: inline-block;
 }
 
 
 /*-------------------------------------------------FOOTER--------------------*/
 
 div#footer {
-	vertical-align: middle;
+  vertical-align: middle;
     text-align: center;
-	color: grey;
-	margin: 40px 0 15px 0;
+  color: grey;
+  margin: 40px 0 15px 0;
 }
 
 

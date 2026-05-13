@@ -16,19 +16,19 @@ srand((double)microtime()*1000000);
 
 for($y=0; $y<1000; $y++)
 {
-	for($x=0; $x<80; $x++)
-	{
-	    $write = rand(0,1);
-		
-		if ($write == 1 ) { $check = "checked='checked'";} else {$check = "";}
-		
-	    $number = ($y * 10) + $x;
-		
-		$radiartwork[$number] = "<input ".$check." type='radio' name='y".$y."x".$x."'/>";
-		
-		echo $radiartwork[$number];
-	}
-	echo "<br />";
+  for($x=0; $x<80; $x++)
+  {
+      $write = rand(0,1);
+    
+    if ($write == 1 ) { $check = "checked='checked'";} else {$check = "";}
+    
+      $number = ($y * 10) + $x;
+    
+    $radiartwork[$number] = "<input ".$check." type='radio' name='y".$y."x".$x."'/>";
+    
+    echo $radiartwork[$number];
+  }
+  echo "<br />";
 }
 
 ?>
